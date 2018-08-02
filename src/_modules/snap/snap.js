@@ -38,7 +38,7 @@ export default class Snap {
         this.VIDEO.setAttribute('playsinline', '');
         this.VIDEO.setAttribute('muted', '');
 
-        this.IMAGE.setAttribute('id', 'plant');
+        this.IMAGE.setAttribute('id', 'image');
         document.body.appendChild(this.IMAGE);
 
         /**
