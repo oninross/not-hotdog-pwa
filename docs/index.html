@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Not Hotdog PWA</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/not-hotdog-pwa/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/not-hotdog-pwa/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/not-hotdog-pwa/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/not-hotdog-pwa/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/not-hotdog-pwa/images/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="./assets/not-hotdog-pwa/images/favicon/safari-pinned-tab.svg" color="#ed1c24">
+    <meta name="msapplication-TileColor" content="#ed1c24">
+    <meta name="theme-color" content="#ed1c24">
+    <link rel="stylesheet" href="./assets/not-hotdog-pwa/css/main.css">
+  </head>
+  <body>
+    <main id="main">
+      <section class="section snap">
+        <div class="snap__message"></div>
+        <button type="button" class="snap__btn -btn -camera js-take-photo">
+          <svg viewbox="0 0 24 24">
+            <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z"></path>
+          </svg>
+        </button>
+        <video id="video" width="640" height="480" autoplay></video>
+        <div class="snap__details"></div>
+        <div class="snap__viewer">
+          <button type="button" class="snap__btn -btn -delete js-delete-photo">
+            <svg viewbox="0 0 24 24">
+              <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"></path>
+            </svg>
+          </button>
+          <div class="snap__polaroid"></div>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/not-hotdog-pwa/js/main.js"></script>
+    <script id="toaster-template" type="text/template">
+      <div class="toaster__card toaster{{= it.ind }}">
+        <p>{{! it.message }}</p>{{? it.isReload }}
+        <button class="btn-refresh js-refresh">REFRESH</button>{{? }}
+        <button class="js-dismiss"><span class="sr-only">Close</span><i class="icon icon-cross"></i></button>
+      </div>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+// snap styles
+#video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+}
+
+#plant {
+    bottom: 0;
+    height: 224px;
+    opacity: 0;
+    position: absolute;
+    width: 224px;
+    z-index: -10;
+}
+
+.snap {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    &__instructions {
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        height: 100vh;
+        position: relative;
+    }
+
+    &__wrap {
+        margin: auto;
+        text-align: center;
+
+        h2, p {
+            color: $white;
+            text-shadow: 0 2px 0 $black;
+        }
+
+        h2 {
+            font-size: 3.6em;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        svg {
+            width: 100px;
+        }
+    }
+
+    &__canvas {
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        z-index: -10;
+    }
+
+    &__message {
+        color: $white;
+        font-weight: $thin;
+        font-size: 4em;
+        line-height: 1;
+        padding: 0 20px;
+        position: absolute;
+        top: 25px;
+        text-align: center;
+        text-shadow: 0 1px 8px $black;
+        width: 100%;
+        z-index: 10;
+    }
+
+    &__details {
+        bottom: 0;
+        color: $white;
+        left: 0;
+        padding: 0 20px 15px;
+        position: fixed;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+        width: 100%;
+        z-index: 20;
+
+        p {
+            line-height: 1.25;
+            margin: 0;
+        }
+    }
+
+    &__viewer {
+        @include transition((opacity, transform, visibility), 1s, $easeOutExpo);
+
+        background-color: $black;
+        bottom: 15px;
+        height: 175px;
+        opacity: 0;
+        position: absolute;
+        right: 20px;
+        transform: translateY(100%) rotate(5deg);
+        width: 175px;
+        visibility: hidden;
+        z-index: 30;
+
+        img {
+            @include absolute-center;
+        }
+
+        &.-show {
+            opacity: 1;
+            transform: translateY(0) rotate(-5deg);
+            visibility: visible;
+        }
+    }
+
+    &__polaroid {
+        @extend .backstretch;
+
+        border: 10px solid $white;
+        height: inherit;
+        overflow: hidden;
+        position: relative;
+        width: inherit;
+    }
+
+    &__hidden {
+        display: none;
+    }
+
+    &__btn {
+        @include material-shadow(2);
+
+        background-color: $white;
+        border: 0;
+        border-radius: 50%;
+        height: 50px;
+        overflow: hidden;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 50px;
+        z-index: 10;
+
+        &:active {
+            @include material-shadow(1);
+        }
+
+        &[disabled] {
+            background-color: $grey;
+        }
+
+        svg {
+            @include transition(opacity, $animTime, $easeOutExpo);
+
+            fill: $black;
+            height: 25px;
+            opacity: 1;
+            width: 25px;
+        }
+
+        circle {
+            fill: $black;
+        }
+
+        &.-hide {
+            transform: translateY(30vh);
+        }
+
+        &.-camera {
+            @include transition(transform, $animTime, $easeOutExpo);
+
+            bottom: 90px;
+            height: 75px;
+            left: 0;
+            margin: auto;
+            padding: 18px;
+            position: absolute;
+            right: 0;
+            top: auto;
+            width: 75px;
+            z-index: 15;
+
+            svg {
+                fill: $black;
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        &.-delete {
+            background-color: $red;
+
+            svg {
+                fill: $white;
+            }
+
+            circle {
+                fill: $black;
+            }
+        }
+    }
+}

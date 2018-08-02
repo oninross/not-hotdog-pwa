@@ -1,0 +1,23 @@
+mixin snap(spec)
+    - spec = spec || {}
+    - spec.__class = spec.__class || ''
+
+    section.section.snap
+        .snap__message
+
+        button.snap__btn.-btn.-camera.js-take-photo(type="button")
+            svg(viewbox='0 0 24 24')
+                path(d='M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z')
+
+        video#video(width='640', height='480', autoplay='')
+
+        .snap__details
+
+        .snap__viewer
+            button.snap__btn.-btn.-delete.js-delete-photo(type="button")
+                svg(viewbox='0 0 24 24')
+                    path(d='M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z')
+
+            .snap__polaroid
+
+

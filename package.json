@@ -1,0 +1,108 @@
+{
+  "name": "not-hotdog-pwa",
+  "version": "0.0.0",
+  "dependencies": {
+    "@tensorflow/tfjs": "^0.12.4",
+    "@tensorflow/tfjs-converter": "^0.5.6",
+    "@tensorflow/tfjs-core": "^0.12.8",
+    "babel-plugin-async-to-promises": "^1.0.5",
+    "baffle": "^0.3.6",
+    "browserify-shim": "^3.8.12",
+    "dot": "^1.1.2",
+    "gsap": "^1.19.1",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "~6.7.5",
+    "babel-core": "~6.23.1",
+    "babel-eslint": "~7.1.1",
+    "babel-plugin-add-module-exports": "~0.2.1",
+    "babel-preset-es2015": "~6.22.0",
+    "babelify": "~7.3.0",
+    "browser-sync": "^2.24.5",
+    "browserify": "~13.0.1",
+    "del": "~2.2.2",
+    "envify": "~4.0.0",
+    "foldero": "~0.1.1",
+    "glob": "~7.1.1",
+    "gulp": "~3.9.1",
+    "gulp-bump": "^2.7.0",
+    "gulp-changed": "~2.0.0",
+    "gulp-cssnano": "~2.1.2",
+    "gulp-data": "~1.2.1",
+    "gulp-eslint": "~3.0.1",
+    "gulp-htmlmin": "~3.0.0",
+    "gulp-if": "~2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jade": "~1.1.0",
+    "gulp-load-plugins": "~1.5.0",
+    "gulp-notify": "~3.0.0",
+    "gulp-plumber": "~1.1.0",
+    "gulp-postcss": "~6.3.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "~2.4.1",
+    "gulp-uglify": "~2.0.1",
+    "gulp-util": "~3.0.8",
+    "imagemin-pngquant": "^5.1.0",
+    "imagemin-svgo": "~5.2.0",
+    "jade": "~1.11.0",
+    "js-yaml": "~3.8.1",
+    "lodash": "~4.17.4",
+    "minimist": "~1.2.0",
+    "rimraf": "~2.6.1",
+    "vinyl-buffer": "~1.0.0",
+    "vinyl-source-stream": "~1.1.0",
+    "watchify": "^3.11.0"
+  },
+  "scripts": {
+    "clean-deps": "rimraf node_modules"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "doT": "./node_modules/doT/doT.js",
+    "TweenLite": "./node_modules/gsap/src/uncompressed/TweenLite.js",
+    "EasePack": "./node_modules/gsap/src/uncompressed/easing/EasePack.js",
+    "AttrPlugin": "./node_modules/gsap/src/uncompressed/plugins/AttrPlugin.js",
+    "CSSPlugin": "./node_modules/gsap/src/uncompressed/plugins/CSSPlugin.js"
+  },
+  "browserify-shim": {
+    "jquery": "jQuery",
+    "doT": "doT"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "//": "CUSTOM CONFIGURATION",
+  "config": {
+    "//": "Entry files",
+    "host": "127.0.0.1",
+    "port": "3000",
+    "baseUrl": "./",
+    "directories": {
+      "source": "src",
+      "assets": "assets/not-hotdog-pwa",
+      "destination": "docs",
+      "temporary": "tmp",
+      "//": "Directories relative to `source` directory",
+      "modules": "_modules",
+      "layouts": "_layouts",
+      "images": "_images",
+      "css": "_css",
+      "fonts": "_fonts",
+      "js": "_js",
+      "data": "_data",
+      "models": "_models",
+      "audio": "_audio"
+    },
+    "entries": {
+      "js": "main**.js",
+      "css": "main**.{sass,scss}"
+    }
+  }
+}
