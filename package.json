@@ -1,6 +1,6 @@
 {
   "name": "not-hotdog-pwa",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {
     "@tensorflow/tfjs": "^0.12.4",
     "@tensorflow/tfjs-converter": "^0.5.6",
