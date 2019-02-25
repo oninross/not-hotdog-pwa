@@ -147,6 +147,7 @@ export default class Snap {
     reset() {
         const self = this;
 
+        self.IMAGE.src = null;
         this.IMAGE.removeAttribute('src');
         self.MESSAGE.textContent = '';
         self.DETAILS.innerHTML = '';
