@@ -24,7 +24,7 @@ $(() => {
 
 
     // Simple Service Worker to make App Install work (OPTIONAL)
-    new ServiceWorker();
+    // new ServiceWorker();
 
 
     // toaster("I'm a not-hotdog-pwa!!!", 0, true);
